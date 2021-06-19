@@ -1,0 +1,17 @@
+O que será feito:
+    1.	Cadastro
+        a.	Cadastro de animais
+        b.	Cadastro de remédios
+        c.	Cadastro de clientes (Pessoa, dona do animal)
+        d.	Cadastro de veterinários
+        e.	Cadastro de exames > gera um histórico [OPCIONAL]
+    2.	Telas
+        a.	Telas de cadastro
+        b.	Tela de login
+        c.	Tela FAQ
+        d.	Tela home /inicial  Terá o menu das outras opções
+        e.	Tela de histórico de animal
+    3.	Ações
+        a.	Ação de gerar relatório
+        b.	Rodapé
+        c.	CRUD em algumas telas
