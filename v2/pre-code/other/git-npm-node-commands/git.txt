@@ -1,0 +1,6 @@
+select terminal from git bash
+
+touch .env
+touch .gitignore
+
+add '.env' in new file .gitignore

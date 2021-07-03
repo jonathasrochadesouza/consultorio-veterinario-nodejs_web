@@ -1,0 +1,9 @@
+
+// directory
+cd v2
+cd pre-code
+cd nodemailer
+C:\dev\workspace\consultorio-veterinario-nodejs_web\v2\pre-code\server\nodemailer
+
+// run
+node server.js

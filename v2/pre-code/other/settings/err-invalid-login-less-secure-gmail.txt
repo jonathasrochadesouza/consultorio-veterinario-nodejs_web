@@ -1,0 +1,7 @@
+access page https://myaccount.google.com/u/6/lesssecureapps
+with your account google gmail 
+
+same account as the .env file
+
+active de option! change the switch button to on
+
