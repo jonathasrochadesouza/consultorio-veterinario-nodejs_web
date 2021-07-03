@@ -1,0 +1,14 @@
+
+
+npm init -y
+npm install express
+npm install nodemailer -S
+
+touch server.js
+
+Send email with Nodemailer using gmail account - Nodejs
+https://youtu.be/Va9UKGs1bwI
+https://youtu.be/Va9UKGs1bwI
+
+
+

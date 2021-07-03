@@ -1,0 +1,11 @@
+CREATE TABLE public.pet
+(
+    idanimal serial integer NOT NULL,
+    nome character varying(20) NOT NULL,
+    raca character varying(50) NOT NULL,
+    idade integer,
+    peso numeric,
+    altura numeric,
+    sexo char,
+    imagem bytea,
+)

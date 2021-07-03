@@ -1,0 +1,10 @@
+CREATE TABLE public.endereco
+(
+    idendereco serial integer NOT NULL,
+    numero integer,
+    rua character varying",
+    cidade character varying,
+    bairro character varying,
+    estado character varying,
+    cep character varying,
+)

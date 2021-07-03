@@ -1,0 +1,9 @@
+CREATE TABLE public.cliente
+(
+    idcliente serial NOT NULL,
+    idanimal integer,
+    idendereco integer,
+    nome character varying,
+    email character varying,
+    telefone character varying
+)

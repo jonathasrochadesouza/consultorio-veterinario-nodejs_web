@@ -1,0 +1,5 @@
+INSERT INTO public.pet(
+	nome, raca, idade, peso, altura, sexo)
+	VALUES ('Tominhas', 'Beagle', 4, 5.5, 5.5, 'M');
+	
+select * from pet;
