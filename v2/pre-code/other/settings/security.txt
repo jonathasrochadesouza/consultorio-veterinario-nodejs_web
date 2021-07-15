@@ -1,1 +1,0 @@
-We hide our credentials in the .env file and don't commit it

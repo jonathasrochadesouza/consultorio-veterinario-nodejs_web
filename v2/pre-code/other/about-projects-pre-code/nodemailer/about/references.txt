@@ -1,3 +1,0 @@
-
-Send email with Nodemailer using gmail account - Nodejs - Esterling Accime
-https://youtu.be/Va9UKGs1bwI

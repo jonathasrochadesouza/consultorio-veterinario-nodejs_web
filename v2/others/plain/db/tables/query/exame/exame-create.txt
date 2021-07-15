@@ -1,9 +1,0 @@
-CREATE TABLE public.exame
-(
-    idexame serial integer NOT NULL DEFAULT,
-    idanimal character varying,
-    nome character varying,
-    email character varying,
-    senha character varying,
-    telefone character varying,
-)

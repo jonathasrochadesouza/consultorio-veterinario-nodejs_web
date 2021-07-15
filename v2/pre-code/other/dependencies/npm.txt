@@ -1,4 +1,0 @@
-
-npm install -g jshint
-
-npm install dotenv -S
