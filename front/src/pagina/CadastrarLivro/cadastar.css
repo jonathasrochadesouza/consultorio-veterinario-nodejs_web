@@ -1,0 +1,12 @@
+body{
+    margin-top: 80px;
+}
+h1 {
+    width: 100%;
+    text-align: center;
+}
+#formulario {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
