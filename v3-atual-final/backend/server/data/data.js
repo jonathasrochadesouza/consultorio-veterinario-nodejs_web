@@ -53,7 +53,43 @@ exports.saveCliente = function(cliente) {
     return database.one('insert into cliente (nome, endereco, telefone) values ($1, $2, $3) returning *', [cliente.nome], [cliente.endereco], [cliente.telefone]);
 }
 
-/////////////////////////////////////////////////   Pedidos //////////////////////////////////////////////////////
+/////////////////////////////////////////////////   Usuario  //////////////////////////////////////////////////////
+
+exports.getUsuarios = function () {
+    return database.query('select * from usuario');
+}
+
+//Conexão com o banco onde seleciona apenas um registro da tabela segundo o codigo passado
+exports.getUsuario = function(idusuario) {
+    return database.query('select * from usuario where idusuario = $1', [idusuario]);
+}
+
+//Conexão com o banco onde é realisado uma exclusão do registro pelo codigo passado
+exports.deleteUsuario = function(idusuario){
+    return database.none('delete from usuario where idusuario =', [idusuario]);
+}
+
+//Conexão onde vai se pego um json o parâmetro (usuario) onde contém dados do pedido e é inserido 
+exports.saveUsuario = function(usuario) {
+    return database.one('insert into usuario(idcliente, email, senha) values($1, $2, $3) returning *', [ usuario.idcliente, usuario.email, usuario.senha]);
+}
+
+exports.getLogin = function(usuario) {
+    return database.query('select * from usuario where email = $1 and senha = $2', [usuario.email, usuario.senha]);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 exports.getPedidos = function () {
     return database.query('select * from pedido');
@@ -78,40 +114,4 @@ exports.savePedido = function(pedido) {
 
 /////////////////////////////////////////////////   Usuários //////////////////////////////////////////////////////
 
-exports.getUsuarios = function () {
-    return database.query('select * from usuario');
-}
 
-//Conexão com o banco onde seleciona apenas um registro da tabela segundo o codigo passado
-exports.getUsuario = function(codigo) {
-    return database.query('select * from usuario where codigo = $1', [codigo]);
-}
-
-//Conexão com o banco onde é realisado uma exclusão do registro pelo codigo passado
-exports.deleteUsuario = function(codigo){
-    return database.none('delete from usuario where codigo =', [codigo]);
-}
-
-//Conexão onde vai se pego um json o parâmetro (usuario) onde contém dados do pedido e é inserido 
-exports.saveUsuario = function(usuario) {
-    return database.one('insert into usuario(email, senha, telefone) values($1, $2, $3) returning *', [ usuario.email, usuario.senha, usuario.telefone]);
-}
-
-//Conexão com o banco onde seleciona apenas um registro da tabela segundo o codigo passado
-exports.getLogin = function(usuario) {
-    return database.query('select * from usuario where email = $1 and senha = $2', [usuario.email, usuario.senha]);
-}
-
-/**
- * get password
- * 
- * @param {*} usuario 
- */
- exports.getPassword = function(usuario) {
-     const pass = database.query('select senha from usuario where email = $1 ', [usuario.email]);
-     const pass2 = database.query('select * from usuario');
-     console.log(pass2); 
-    return pass;
-}
-
-////////////////////////////////////////////////////

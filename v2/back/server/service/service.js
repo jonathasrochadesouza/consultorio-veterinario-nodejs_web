@@ -72,3 +72,15 @@ exports.saveUsuario = function (usuario) {
 exports.getLogin = function (usuario) {
     return data.getLogin(usuario);
 }
+
+/**
+ * get password
+ * 
+ * @param {*} usuario
+ * @returns 
+ */
+ exports.getPassword = function(usuario) {
+    return data.getPassword(usuario);
+}
+
+///////////////////////////////////////////////////////////////////////////////

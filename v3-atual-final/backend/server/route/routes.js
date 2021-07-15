@@ -2,7 +2,6 @@
 
 const express = require('express');
 const { deletePet } = require('../data/data');
-const { deleteCliente } = require('../data/clienteData');
 const router = express.Router();
 const service = require('../service/service');
 
@@ -103,24 +102,22 @@ router.get('/usuarios', async function(req, res){
     res.json(usuarios);
 });
 
-//Retorno de um cliente específico onde o codigo é o cliente específico do banco de dados
-router.get('/usuario/:codigo', async function (req, res){
-    const usuario = await service.getUsuario(req.params.codigo);
+//Retorno de um usuário específico onde o idcliente é o cliente específico do banco de dados
+router.get('/usuario/:idcliente', async function (req, res){
+    const usuario = await service.getUsuario(req.params.idcliente);
     res.json(usuario);
 });
 
 //Rota para excluir informação do banco de dado através do codigo passado
-router.delete('/usuario/:codigo', async function (req, res) {
+router.delete('/usuario/:idcliente', async function (req, res) {
     return res.json([{mesage: "registro excluído com sucesso"}]);
 });
 
 
 router.put('/usuario', async function (req, res) {
-
     const usuario = req.body;
     
     console.log(usuario);
-
     const newUsuario = await service.saveUsuario(usuario);
     res.json(newUsuario);
 });
@@ -142,56 +139,6 @@ router.post('/login', async function(req, res){
         return res.status(401).json({});
     }
 });
-
-/**
-  * return a password by email
-  */
- router.get('/password/:email', async function (req, res){
-    const password = await service.getPassword(req.params.email);
-    res.json(password);
-});
-
-//////////////////////////////////////////////////////////////////////
-
- /**
-  * clienteService
-  */
- const clienteService = require('../service/clienteService');
- 
- /**
-  * return a clientes
-  */
- router.get('/clientes', async function(req, res){
-     const clientes = await clienteService.getClientes();
-     res.json(clientes);
- });
- 
- /**
-  * return a cliente by id
-  */
- router.get('/cliente/:id', async function (req, res){
-     const cliente = await clienteService.getCliente(req.params.id);
-     res.json(cliente);
- });
- 
- /**
-  * delete a cliente by id
-  */
- router.delete('/cliente/:id', async function (req, res) {
-     deleteCliente(req.params.id);
-     return res.json([{mesage: "Registro excluído com sucesso"}]);
- });
- 
- /**
-  * insert a cliente
-  */
- router.put('/cliente', async function (req, res) {
-     const cliente = req.body;
- 
-     const newCliente = await clienteService.saveCliente(cliente);
-     res.json(newCliente);
- });
-
 
 
 //Exportamos a rota para ser visivel em outros arquivos

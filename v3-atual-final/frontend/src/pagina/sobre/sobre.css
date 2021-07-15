@@ -1,0 +1,12 @@
+#sobre_container {
+    margin-top: -60px;
+    width: 100%;
+    text-align: start;
+    
+}
+
+#sobre {
+    padding: 2%;
+    text-align: start;
+    background-color: rgb(238, 237, 237) !important;
+}
